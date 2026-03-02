@@ -59,6 +59,30 @@ switch (operation.toLowerCase()) {
       process.exit(1);
     }
     break;
+  case 'mod':
+  case 'modulo':
+  case '%':
+    try {
+      result = modulo(a, b);
+    } catch (e) {
+      console.error('Error: ' + e.message);
+      process.exit(1);
+    }
+    break;
+  case 'pow':
+  case 'power':
+  case '^':
+    result = power(a, b);
+    break;
+  case 'sqrt':
+  case 'squareroot':
+    try {
+      result = squareRoot(a);
+    } catch (e) {
+      console.error('Error: ' + e.message);
+      process.exit(1);
+    }
+    break;
   default:
     console.error('Unknown operation:', operation);
     printUsage();
